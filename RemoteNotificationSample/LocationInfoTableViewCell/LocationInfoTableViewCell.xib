@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationInfoTableViewCell" customModule="RemoteNotificationSample" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationInfoTableViewCell" rowHeight="33" id="Rcx-c0-gb1" userLabel="LocationInfoTableViewCell" customClass="LocationInfoTableViewCell" customModule="RemoteNotificationSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rcx-c0-gb1" id="oO2-yR-EE2">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="32.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWb-S9-8ib">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.1648373008" green="0.3850486279" blue="0.5554496646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJl-Tu-JN6">
+                        <rect key="frame" x="160" y="0.0" width="160" height="32.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="xJl-Tu-JN6" secondAttribute="bottom" id="AaB-dO-fMJ"/>
+                    <constraint firstItem="xJl-Tu-JN6" firstAttribute="width" secondItem="pWb-S9-8ib" secondAttribute="width" id="Ccx-JV-GfS"/>
+                    <constraint firstItem="xJl-Tu-JN6" firstAttribute="top" secondItem="oO2-yR-EE2" secondAttribute="top" id="Cdf-9W-O6W"/>
+                    <constraint firstAttribute="trailing" secondItem="xJl-Tu-JN6" secondAttribute="trailing" id="RSD-eB-MUB"/>
+                    <constraint firstItem="xJl-Tu-JN6" firstAttribute="leading" secondItem="pWb-S9-8ib" secondAttribute="trailing" id="VMM-KW-fUS"/>
+                    <constraint firstItem="pWb-S9-8ib" firstAttribute="top" secondItem="oO2-yR-EE2" secondAttribute="top" id="WUL-RJ-kw4"/>
+                    <constraint firstAttribute="bottom" secondItem="pWb-S9-8ib" secondAttribute="bottom" id="YKg-6Z-N4Q"/>
+                    <constraint firstItem="pWb-S9-8ib" firstAttribute="leading" secondItem="oO2-yR-EE2" secondAttribute="leading" id="t93-DK-kHQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="latLongLabel" destination="xJl-Tu-JN6" id="1ta-YD-4s8"/>
+                <outlet property="timeLabel" destination="pWb-S9-8ib" id="193-yA-zda"/>
+            </connections>
+            <point key="canvasLocation" x="286" y="180.5"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

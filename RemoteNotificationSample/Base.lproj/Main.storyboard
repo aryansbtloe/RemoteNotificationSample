@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RemoteNotificationSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Token" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9od-TN-eK6">
+                                <rect key="frame" x="0.0" y="20" width="110" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Z1X-KY-S8c"/>
+                                    <constraint firstAttribute="width" constant="110" id="jM6-qr-nwM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta2-pQ-ebf">
+                                <rect key="frame" x="30" y="45" width="315" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="FVy-Yj-hbE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.3679109216" green="0.1425545812" blue="0.39698317649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9i2-ut-neV">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PC1-59-Qdo"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XPh-Lb-JDS"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exl-bN-e8R">
+                                <rect key="frame" x="0.0" y="77" width="187.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <state key="normal" title="Copy Device token"/>
+                                <connections>
+                                    <action selector="onClickOfCopyDeviceToken" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFk-t7-Rog"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jf-K9-Bw0">
+                                <rect key="frame" x="187.5" y="77" width="187.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                <state key="normal" title="Copy Silent Notification Json"/>
+                                <connections>
+                                    <action selector="onClickOfCopySilentNotificationJson" destination="BYZ-38-t0r" eventType="touchUpInside" id="pYa-Jc-lzQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2jf-K9-Bw0" firstAttribute="top" secondItem="Ta2-pQ-ebf" secondAttribute="bottom" id="20P-e7-J5z"/>
+                            <constraint firstAttribute="trailing" secondItem="2jf-K9-Bw0" secondAttribute="trailing" id="4NC-AD-YVD"/>
+                            <constraint firstItem="9i2-ut-neV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A1K-zM-QhX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9i2-ut-neV" secondAttribute="bottom" id="DeP-VC-VTb"/>
+                            <constraint firstItem="Exl-bN-e8R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UT1-jZ-Bbe"/>
+                            <constraint firstAttribute="trailing" secondItem="Ta2-pQ-ebf" secondAttribute="trailing" constant="30" id="WaG-rK-2Ew"/>
+                            <constraint firstItem="Exl-bN-e8R" firstAttribute="top" secondItem="Ta2-pQ-ebf" secondAttribute="bottom" id="XBA-Ot-8eI"/>
+                            <constraint firstItem="2jf-K9-Bw0" firstAttribute="width" secondItem="Exl-bN-e8R" secondAttribute="width" id="XvC-24-dNa"/>
+                            <constraint firstItem="9od-TN-eK6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="Zt3-gY-MEP"/>
+                            <constraint firstItem="Ta2-pQ-ebf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="b5V-RP-a15"/>
+                            <constraint firstItem="9i2-ut-neV" firstAttribute="top" secondItem="2jf-K9-Bw0" secondAttribute="bottom" id="geZ-if-79R"/>
+                            <constraint firstItem="2jf-K9-Bw0" firstAttribute="leading" secondItem="Exl-bN-e8R" secondAttribute="trailing" id="hAW-4c-dO0"/>
+                            <constraint firstItem="9i2-ut-neV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="j1B-gx-d3C"/>
+                            <constraint firstItem="9od-TN-eK6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="juN-fL-aXQ"/>
+                            <constraint firstItem="9i2-ut-neV" firstAttribute="top" secondItem="Exl-bN-e8R" secondAttribute="bottom" id="lPl-dI-Ir5"/>
+                            <constraint firstAttribute="trailing" secondItem="9i2-ut-neV" secondAttribute="trailing" id="qeD-b6-gmg"/>
+                            <constraint firstItem="Ta2-pQ-ebf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="uOA-dU-MiB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deviceToken" destination="Ta2-pQ-ebf" id="DRr-YW-uYk"/>
+                        <outlet property="tableView" destination="9i2-ut-neV" id="leO-t4-IG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
