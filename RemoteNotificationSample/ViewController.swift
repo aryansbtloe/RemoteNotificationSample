@@ -53,6 +53,8 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     func updateUserInterfaceOfScreen(){
         deviceToken.text = getDeviceToken()
         tableView.reloadData()
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(ViewController.updateUserInterfaceOfScreen), object: nil)
+        self.perform(#selector(ViewController.updateUserInterfaceOfScreen), with: nil, afterDelay: 5)
     }
     
     func fetchCurrentLocationAndSaveAndDisplay(){
@@ -103,7 +105,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let info = self.fetchedLocations[indexPath.row]
         let cell = tableView .dequeueReusableCell(withIdentifier: "LocationInfoTableViewCell") as!LocationInfoTableViewCell
-        cell.latLongLabel?.text = "lat : \(info["lat"]!)\n lon : \(info["lon"]!))"
+        cell.latLongLabel?.text = "lat : \(info["lat"]!)\nlon : \(info["lon"]!)"
         cell.timeLabel?.text = Date(fromString: info["date"]!, format: df)?.timePassed()
         return cell
     }
@@ -113,14 +115,15 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         let prompt = UIAlertController(title: "Device Token Copied !", message: "1: Terminate this application.\n2:Send silent notifications\n3:Observe Recorded location." , preferredStyle: UIAlertControllerStyle.alert)
         prompt.addAction(UIAlertAction(title: "Got it", style: UIAlertActionStyle.default, handler: nil))
         self.present(prompt, animated: true, completion: nil)
+        print("DEVICE TOKEN : \(getDeviceToken())")
     }
     
-    
     @IBAction fileprivate func onClickOfCopySilentNotificationJson() {
-        UIPasteboard.general.string = "{'aps':{'content-available':1,}}"
-        let prompt = UIAlertController(title: "Silent Notification Json Copied !", message: "1: open http://pushtry.com\n2:add provided pem\n3:paste device token\n4:select json and paste copied content" , preferredStyle: UIAlertControllerStyle.alert)
+        UIPasteboard.general.string = "{\"aps\":{\"content-available\":1,}}"
+        let prompt = UIAlertController(title: "Notification Json Copied !", message: "1: open http://pushtry.com\n2:add provided pem\n3:paste device token\n4:select json and paste copied content\n5:Remove \\ character from Json Payload" , preferredStyle: UIAlertControllerStyle.alert)
         prompt.addAction(UIAlertAction(title: "Got it", style: UIAlertActionStyle.default, handler: nil))
         self.present(prompt, animated: true, completion: nil)
+        print("SILENT PUSH NOTIFICATION PAYLOAD JSON : {'aps':{'content-available':1,}}")
     }
     
 }
